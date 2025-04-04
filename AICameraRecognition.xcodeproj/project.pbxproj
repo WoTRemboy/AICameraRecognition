@@ -30,6 +30,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		636F3CB12DA0155700D775E5 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				636F3CB42DA0159A00D775E5 /* View */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		636F3CB22DA0157E00D775E5 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				63E566AE2DA014230049951D /* Assets.xcassets */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		636F3CB32DA0158B00D775E5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				63E566AD2DA014230049951D /* AICameraRecognitionApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		636F3CB42DA0159A00D775E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63E566AF2DA014230049951D /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		63E566962DA012E50049951D = {
 			isa = PBXGroup;
 			children = (
@@ -49,9 +81,9 @@
 		63E566B02DA014230049951D /* AICameraRecognition */ = {
 			isa = PBXGroup;
 			children = (
-				63E566AD2DA014230049951D /* AICameraRecognitionApp.swift */,
-				63E566AE2DA014230049951D /* Assets.xcassets */,
-				63E566AF2DA014230049951D /* ContentView.swift */,
+				636F3CB32DA0158B00D775E5 /* Application */,
+				636F3CB12DA0155700D775E5 /* MainModule */,
+				636F3CB22DA0157E00D775E5 /* SupportFiles */,
 			);
 			path = AICameraRecognition;
 			sourceTree = "<group>";
