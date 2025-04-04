@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		636F3CB82DA01C4600D775E5 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CB72DA01C4100D775E5 /* SplashScreenView.swift */; };
+		636F3CBB2DA01C9E00D775E5 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBA2DA01C9D00D775E5 /* Labels.swift */; };
+		636F3CBD2DA01CD100D775E5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBC2DA01CCF00D775E5 /* ColorExtension.swift */; };
+		636F3CBF2DA01D4500D775E5 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBE2DA01D4200D775E5 /* ImageExtension.swift */; };
 		63E566B12DA014230049951D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E566AE2DA014230049951D /* Assets.xcassets */; };
 		63E566B22DA014230049951D /* AICameraRecognitionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E566AD2DA014230049951D /* AICameraRecognitionApp.swift */; };
 		63E566B32DA014230049951D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E566AF2DA014230049951D /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		636F3CB72DA01C4100D775E5 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		636F3CBA2DA01C9D00D775E5 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
+		636F3CBC2DA01CCF00D775E5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		636F3CBE2DA01D4200D775E5 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		63E5669F2DA012E50049951D /* AICameraRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AICameraRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E566AD2DA014230049951D /* AICameraRecognitionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICameraRecognitionApp.swift; sourceTree = "<group>"; };
 		63E566AE2DA014230049951D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +70,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		636F3CB52DA01BC900D775E5 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				636F3CB72DA01C4100D775E5 /* SplashScreenView.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		636F3CB62DA01BD400D775E5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				636F3CB52DA01BC900D775E5 /* SplashScreen */,
+				636F3CB12DA0155700D775E5 /* MainModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		636F3CB92DA01C8C00D775E5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				636F3CBE2DA01D4200D775E5 /* ImageExtension.swift */,
+				636F3CBC2DA01CCF00D775E5 /* ColorExtension.swift */,
+				636F3CBA2DA01C9D00D775E5 /* Labels.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		63E566962DA012E50049951D = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				636F3CB32DA0158B00D775E5 /* Application */,
-				636F3CB12DA0155700D775E5 /* MainModule */,
+				636F3CB62DA01BD400D775E5 /* Modules */,
+				636F3CB92DA01C8C00D775E5 /* Extensions */,
 				636F3CB22DA0157E00D775E5 /* SupportFiles */,
 			);
 			path = AICameraRecognition;
@@ -161,7 +197,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				63E566B22DA014230049951D /* AICameraRecognitionApp.swift in Sources */,
+				636F3CBF2DA01D4500D775E5 /* ImageExtension.swift in Sources */,
+				636F3CBD2DA01CD100D775E5 /* ColorExtension.swift in Sources */,
 				63E566B32DA014230049951D /* ContentView.swift in Sources */,
+				636F3CBB2DA01C9E00D775E5 /* Labels.swift in Sources */,
+				636F3CB82DA01C4600D775E5 /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
