@@ -11,6 +11,11 @@
 		636F3CBB2DA01C9E00D775E5 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBA2DA01C9D00D775E5 /* Labels.swift */; };
 		636F3CBD2DA01CD100D775E5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBC2DA01CCF00D775E5 /* ColorExtension.swift */; };
 		636F3CBF2DA01D4500D775E5 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBE2DA01D4200D775E5 /* ImageExtension.swift */; };
+		63D723BA2DA40E1E008FF419 /* DetectionResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D723B92DA40E1E008FF419 /* DetectionResultModel.swift */; };
+		63D723BD2DA40E48008FF419 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D723BC2DA40E45008FF419 /* CameraView.swift */; };
+		63D723BF2DA40E54008FF419 /* DetectionOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D723BE2DA40E4D008FF419 /* DetectionOverlayView.swift */; };
+		63D723C22DA40E7D008FF419 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D723C12DA40E79008FF419 /* CameraViewController.swift */; };
+		63D723C62DA40F63008FF419 /* YOLOv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 63D723C52DA40F63008FF419 /* YOLOv3.mlmodel */; };
 		63E566B12DA014230049951D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E566AE2DA014230049951D /* Assets.xcassets */; };
 		63E566B22DA014230049951D /* AICameraRecognitionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E566AD2DA014230049951D /* AICameraRecognitionApp.swift */; };
 		63E566B32DA014230049951D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E566AF2DA014230049951D /* ContentView.swift */; };
@@ -21,6 +26,12 @@
 		636F3CBA2DA01C9D00D775E5 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		636F3CBC2DA01CCF00D775E5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		636F3CBE2DA01D4200D775E5 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		63D723B92DA40E1E008FF419 /* DetectionResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionResultModel.swift; sourceTree = "<group>"; };
+		63D723BC2DA40E45008FF419 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		63D723BE2DA40E4D008FF419 /* DetectionOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionOverlayView.swift; sourceTree = "<group>"; };
+		63D723C12DA40E79008FF419 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		63D723C32DA40E8F008FF419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63D723C52DA40F63008FF419 /* YOLOv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3.mlmodel; sourceTree = "<group>"; };
 		63E5669F2DA012E50049951D /* AICameraRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AICameraRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E566AD2DA014230049951D /* AICameraRecognitionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICameraRecognitionApp.swift; sourceTree = "<group>"; };
 		63E566AE2DA014230049951D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,7 +52,9 @@
 		636F3CB12DA0155700D775E5 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				63D723B82DA40E16008FF419 /* Model */,
 				636F3CB42DA0159A00D775E5 /* View */,
+				63D723C02DA40E68008FF419 /* Controller */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -66,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				63E566AF2DA014230049951D /* ContentView.swift */,
+				63D723BB2DA40E34008FF419 /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,6 +111,39 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		63D723B82DA40E16008FF419 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63D723B92DA40E1E008FF419 /* DetectionResultModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63D723BB2DA40E34008FF419 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				63D723BC2DA40E45008FF419 /* CameraView.swift */,
+				63D723BE2DA40E4D008FF419 /* DetectionOverlayView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		63D723C02DA40E68008FF419 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				63D723C12DA40E79008FF419 /* CameraViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		63D723C42DA40F57008FF419 /* CoreML */ = {
+			isa = PBXGroup;
+			children = (
+				63D723C52DA40F63008FF419 /* YOLOv3.mlmodel */,
+			);
+			path = CoreML;
+			sourceTree = "<group>";
+		};
 		63E566962DA012E50049951D = {
 			isa = PBXGroup;
 			children = (
@@ -117,9 +164,11 @@
 			isa = PBXGroup;
 			children = (
 				636F3CB32DA0158B00D775E5 /* Application */,
+				63D723C42DA40F57008FF419 /* CoreML */,
 				636F3CB62DA01BD400D775E5 /* Modules */,
 				636F3CB92DA01C8C00D775E5 /* Extensions */,
 				636F3CB22DA0157E00D775E5 /* SupportFiles */,
+				63D723C32DA40E8F008FF419 /* Info.plist */,
 			);
 			path = AICameraRecognition;
 			sourceTree = "<group>";
@@ -197,11 +246,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				63E566B22DA014230049951D /* AICameraRecognitionApp.swift in Sources */,
+				63D723C22DA40E7D008FF419 /* CameraViewController.swift in Sources */,
+				63D723BA2DA40E1E008FF419 /* DetectionResultModel.swift in Sources */,
 				636F3CBF2DA01D4500D775E5 /* ImageExtension.swift in Sources */,
 				636F3CBD2DA01CD100D775E5 /* ColorExtension.swift in Sources */,
+				63D723C62DA40F63008FF419 /* YOLOv3.mlmodel in Sources */,
 				63E566B32DA014230049951D /* ContentView.swift in Sources */,
 				636F3CBB2DA01C9E00D775E5 /* Labels.swift in Sources */,
 				636F3CB82DA01C4600D775E5 /* SplashScreenView.swift in Sources */,
+				63D723BF2DA40E54008FF419 /* DetectionOverlayView.swift in Sources */,
+				63D723BD2DA40E48008FF419 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,8 +393,10 @@
 				DEVELOPMENT_TEAM = NAJAJ652LV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AICameraRecognition/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Reconix;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camera usage to detect objects.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -350,7 +406,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.avoqode.AICameraRecognition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -373,8 +429,10 @@
 				DEVELOPMENT_TEAM = NAJAJ652LV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AICameraRecognition/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Reconix;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camera usage to detect objects.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -384,7 +442,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.avoqode.AICameraRecognition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
