@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var detectionResults = DetectionResults()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world.")
+        ZStack {
+            CameraView(detectionResults: detectionResults)
+                .ignoresSafeArea()
+            
+            DetectionOverlayView(detectionResults: detectionResults)
         }
-        .padding()
     }
 }
 
