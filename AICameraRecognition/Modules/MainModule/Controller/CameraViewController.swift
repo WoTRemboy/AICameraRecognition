@@ -8,13 +8,27 @@
 import UIKit
 import AVFoundation
 import Vision
+import CoreML
 
 final class CameraViewController: UIViewController {
     var detectionResults: DetectionResults?
-
+    
     private let captureSession = AVCaptureSession()
     private var previewLayer: AVCaptureVideoPreviewLayer!
-
+    
+    private lazy var detectionRequest: VNCoreMLRequest = {
+        do {
+            let config = MLModelConfiguration()
+            let yoloModel = try YOLOv3(configuration: config)
+            let vnModel = try VNCoreMLModel(for: yoloModel.model)
+            let request = VNCoreMLRequest(model: vnModel, completionHandler: visionRequestDidComplete)
+            request.imageCropAndScaleOption = .scaleFill
+            return request
+        } catch {
+            fatalError("YOLOv3 model setup error: \(error)")
+        }
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCamera()
@@ -47,7 +61,6 @@ final class CameraViewController: UIViewController {
         
         let videoOutput = AVCaptureVideoDataOutput()
         videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
-        
         if captureSession.canAddOutput(videoOutput) {
             captureSession.addOutput(videoOutput)
         } else {
@@ -63,7 +76,29 @@ final class CameraViewController: UIViewController {
         previewLayer.frame = view.bounds
         view.layer.addSublayer(previewLayer)
         
-        captureSession.startRunning()
+        DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.1) {
+            self.captureSession.startRunning()
+        }
+    }
+    
+    private func visionRequestDidComplete(request: VNRequest, error: Error?) {
+        if let error = error {
+            print("Request completion failed: \(error)")
+            return
+        }
+        
+        guard let results = request.results as? [VNRecognizedObjectObservation] else { return }
+        
+        let detections: [Detection] = results.compactMap { observation in
+            guard let topLabel = observation.labels.first else { return nil }
+            return Detection(label: topLabel.identifier,
+                             confidence: topLabel.confidence,
+                             boundingBox: observation.boundingBox)
+        }
+        
+        DispatchQueue.main.async {
+            self.detectionResults?.detections = detections
+        }
     }
 }
 
@@ -73,12 +108,15 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput,
                        didOutput sampleBuffer: CMSampleBuffer,
                        from connection: AVCaptureConnection) {
-
-        DispatchQueue.main.async {
-            self.detectionResults?.detections = [
-                Detection(label: "Test Object", confidence: 0.95,
-                          boundingBox: CGRect(x: 0.2, y: 0.3, width: 0.4, height: 0.3))
-            ]
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        let orientation: CGImagePropertyOrientation = .right
+        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer,
+                                            orientation: orientation,
+                                            options: [:])
+        do {
+            try handler.perform([detectionRequest])
+        } catch {
+            print("Vision request competion failed: \(error)")
         }
     }
 }
