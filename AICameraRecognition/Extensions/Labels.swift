@@ -15,6 +15,11 @@ final class Texts {
     enum Onboarding {
         static let title = "AI Recognition"
         static let description = "Use your phone's camera to detect objects in real time."
-        static let buttonTitle = "Start"
+        
+        enum Slider {
+            static let idleText = "Swipe to Start"
+            static let onSwipeText = "Confirms Launch"
+            static let confirmationText = "Launching..."
+        }
     }
 }

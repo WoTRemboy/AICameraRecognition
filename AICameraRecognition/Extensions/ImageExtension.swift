@@ -11,5 +11,10 @@ extension Image {
     enum Onboarding {
         static let splashScreenLogo = Image("SplashScreenLogo")
         static let onboardingImage = Image("OnboardingImage")
+        
+        enum Slider {
+            static let chevron = Image(systemName: "chevron.right")
+            static let checkmark = Image(systemName: "checkmark")
+        }
     }
 }

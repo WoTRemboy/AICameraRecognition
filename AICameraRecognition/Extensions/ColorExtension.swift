@@ -27,4 +27,10 @@ extension Color {
         static let labelBlack = Color("LabelBlack")
         static let labelWhite = Color("LabelWhite")
     }
+    
+    enum TintColors {
+        static let tintBlue = Color("TintBlue")
+        static let tintGreen = Color("TintGreen")
+        static let tintOrange = Color("TintOrange")
+    }
 }

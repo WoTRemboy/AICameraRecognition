@@ -49,17 +49,19 @@ struct OnboardingScreenView: View {
     // MARK: - Action Button
     
     private var actionButton: some View {
-        Button {
-            // Action button action
-        } label: {
-            Text(Texts.Onboarding.buttonTitle)
-                .font(.system(size: 17, weight: .medium))
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            
-                .foregroundColor(Color.LabelColors.labelReversed)
-                .background(Color.LabelColors.labelPrimary)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+        let config = SlideToConfirmView.Config(
+            idleText: Texts.Onboarding.Slider.idleText,
+            onSwipeText: Texts.Onboarding.Slider.onSwipeText,
+            confirmationText: Texts.Onboarding.Slider.confirmationText,
+            tint: Color.TintColors.tintOrange,
+            foregroundColor: .white)
+        
+        return SlideToConfirmView(config: config) {
+            // Confirm action
+            let impactMed = UIImpactFeedbackGenerator(style: .medium)
+            impactMed.impactOccurred()
         }
+        
         .frame(height: 50)
         .frame(maxWidth: .infinity)
         .minimumScaleFactor(0.4)
