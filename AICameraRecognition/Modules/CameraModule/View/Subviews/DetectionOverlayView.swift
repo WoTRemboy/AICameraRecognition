@@ -31,7 +31,7 @@ struct DetectionOverlayView: View {
                         .foregroundStyle(Color.red)
                         .padding(4)
                         .background(Color.white.opacity(0.7))
-                        .position(x: x + width, y: y)
+                        .position(x: x + width / 2, y: y - 12)
                 }
             }
         }

@@ -11,6 +11,11 @@
 		636F3CBB2DA01C9E00D775E5 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBA2DA01C9D00D775E5 /* Labels.swift */; };
 		636F3CBD2DA01CD100D775E5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBC2DA01CCF00D775E5 /* ColorExtension.swift */; };
 		636F3CBF2DA01D4500D775E5 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBE2DA01D4200D775E5 /* ImageExtension.swift */; };
+		63AC12902DA7DD5F000C7B89 /* ZoomTransitionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC128F2DA7DD56000C7B89 /* ZoomTransitionModifier.swift */; };
+		63B33CE02DA6A2F7006564B6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B33CDF2DA6A2F3006564B6 /* OnboardingView.swift */; };
+		63B33CE22DA6A449006564B6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B33CE12DA6A446006564B6 /* ViewExtension.swift */; };
+		63B33CE42DA6A633006564B6 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B33CE32DA6A630006564B6 /* FontExtension.swift */; };
+		63B33CE92DA6AF1E006564B6 /* SlideToConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B33CE82DA6AF1E006564B6 /* SlideToConfirmView.swift */; };
 		63D723BA2DA40E1E008FF419 /* DetectionResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D723B92DA40E1E008FF419 /* DetectionResultModel.swift */; };
 		63D723BD2DA40E48008FF419 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D723BC2DA40E45008FF419 /* CameraView.swift */; };
 		63D723BF2DA40E54008FF419 /* DetectionOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D723BE2DA40E4D008FF419 /* DetectionOverlayView.swift */; };
@@ -26,6 +31,11 @@
 		636F3CBA2DA01C9D00D775E5 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		636F3CBC2DA01CCF00D775E5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		636F3CBE2DA01D4200D775E5 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		63AC128F2DA7DD56000C7B89 /* ZoomTransitionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitionModifier.swift; sourceTree = "<group>"; };
+		63B33CDF2DA6A2F3006564B6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		63B33CE12DA6A446006564B6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		63B33CE32DA6A630006564B6 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		63B33CE82DA6AF1E006564B6 /* SlideToConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideToConfirmView.swift; sourceTree = "<group>"; };
 		63D723B92DA40E1E008FF419 /* DetectionResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionResultModel.swift; sourceTree = "<group>"; };
 		63D723BC2DA40E45008FF419 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		63D723BE2DA40E4D008FF419 /* DetectionOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionOverlayView.swift; sourceTree = "<group>"; };
@@ -49,14 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		636F3CB12DA0155700D775E5 /* MainModule */ = {
+		636F3CB12DA0155700D775E5 /* CameraModule */ = {
 			isa = PBXGroup;
 			children = (
 				63D723B82DA40E16008FF419 /* Model */,
 				636F3CB42DA0159A00D775E5 /* View */,
 				63D723C02DA40E68008FF419 /* Controller */,
 			);
-			path = MainModule;
+			path = CameraModule;
 			sourceTree = "<group>";
 		};
 		636F3CB22DA0157E00D775E5 /* SupportFiles */ = {
@@ -96,7 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				636F3CB52DA01BC900D775E5 /* SplashScreen */,
-				636F3CB12DA0155700D775E5 /* MainModule */,
+				63B33CDD2DA6A2DE006564B6 /* OnboardingModule */,
+				636F3CB12DA0155700D775E5 /* CameraModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -106,9 +117,52 @@
 			children = (
 				636F3CBE2DA01D4200D775E5 /* ImageExtension.swift */,
 				636F3CBC2DA01CCF00D775E5 /* ColorExtension.swift */,
+				63B33CE32DA6A630006564B6 /* FontExtension.swift */,
 				636F3CBA2DA01C9D00D775E5 /* Labels.swift */,
+				63B33CE12DA6A446006564B6 /* ViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		63AC12912DA7DD65000C7B89 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63B33CE82DA6AF1E006564B6 /* SlideToConfirmView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		63AC12922DA7DD69000C7B89 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				63AC128F2DA7DD56000C7B89 /* ZoomTransitionModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		63B33CDD2DA6A2DE006564B6 /* OnboardingModule */ = {
+			isa = PBXGroup;
+			children = (
+				63B33CDE2DA6A2EE006564B6 /* View */,
+			);
+			path = OnboardingModule;
+			sourceTree = "<group>";
+		};
+		63B33CDE2DA6A2EE006564B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63B33CDF2DA6A2F3006564B6 /* OnboardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63B33CE52DA6AECB006564B6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				63AC12912DA7DD65000C7B89 /* Views */,
+				63AC12922DA7DD69000C7B89 /* Modifiers */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		63D723B82DA40E16008FF419 /* Model */ = {
@@ -166,6 +220,7 @@
 				636F3CB32DA0158B00D775E5 /* Application */,
 				63D723C42DA40F57008FF419 /* CoreML */,
 				636F3CB62DA01BD400D775E5 /* Modules */,
+				63B33CE52DA6AECB006564B6 /* Helpers */,
 				636F3CB92DA01C8C00D775E5 /* Extensions */,
 				636F3CB22DA0157E00D775E5 /* SupportFiles */,
 				63D723C32DA40E8F008FF419 /* Info.plist */,
@@ -247,15 +302,20 @@
 			files = (
 				63E566B22DA014230049951D /* AICameraRecognitionApp.swift in Sources */,
 				63D723C22DA40E7D008FF419 /* CameraViewController.swift in Sources */,
+				63B33CE42DA6A633006564B6 /* FontExtension.swift in Sources */,
 				63D723BA2DA40E1E008FF419 /* DetectionResultModel.swift in Sources */,
 				636F3CBF2DA01D4500D775E5 /* ImageExtension.swift in Sources */,
 				636F3CBD2DA01CD100D775E5 /* ColorExtension.swift in Sources */,
+				63AC12902DA7DD5F000C7B89 /* ZoomTransitionModifier.swift in Sources */,
+				63B33CE92DA6AF1E006564B6 /* SlideToConfirmView.swift in Sources */,
 				63D723C62DA40F63008FF419 /* YOLOv3.mlmodel in Sources */,
 				63E566B32DA014230049951D /* ContentView.swift in Sources */,
 				636F3CBB2DA01C9E00D775E5 /* Labels.swift in Sources */,
 				636F3CB82DA01C4600D775E5 /* SplashScreenView.swift in Sources */,
+				63B33CE02DA6A2F7006564B6 /* OnboardingView.swift in Sources */,
 				63D723BF2DA40E54008FF419 /* DetectionOverlayView.swift in Sources */,
 				63D723BD2DA40E48008FF419 /* CameraView.swift in Sources */,
+				63B33CE22DA6A449006564B6 /* ViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +466,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.avoqode.AICameraRecognition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -442,7 +502,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.avoqode.AICameraRecognition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
