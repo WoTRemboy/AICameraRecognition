@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct SlideToConfirmView: View {
-    var config: Config
-    var onSwiped: () -> Void
     
     @State private var animateText: Bool = false
     @State private var offsetX: CGFloat = 0
     @State private var isCompleted: Bool = false
+    
+    private var config: Config
+    private var onSwiped: () -> Void
+    
+    init(config: Config, onSwiped: @escaping () -> Void) {
+        self.config = config
+        self.onSwiped = onSwiped
+    }
     
     internal var body: some View {
         GeometryReader { proxy in
@@ -82,12 +88,15 @@ struct SlideToConfirmView: View {
                         offsetX = min(max(value.translation.width, 0), maxLimit)
                     }).onEnded({ value in
                         if offsetX == maxLimit {
-                            onSwiped()
                             animateText = false
-                            
                             withAnimation(.smooth) {
                                 isCompleted = true
                             }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                onSwiped()
+                            }
+                            let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                            impactMed.impactOccurred()
                         } else {
                             withAnimation(.smooth) {
                                 offsetX = 0

@@ -9,18 +9,24 @@ import SwiftUI
 
 struct OnboardingScreenView: View {
     
+    @Namespace private var animation
+    
     @State private var isActive = false
+    @State private var isShowingCamera = false
     
     // MARK: - Body
     
     internal var body: some View {
-        if isActive {
-            ContentView()
-        } else {
-            VStack(spacing: 0) {
-                content
-                actionButton
-            }
+        VStack(spacing: 0) {
+            content
+            actionButton
+        }
+        .fullScreenCover(isPresented: $isShowingCamera) {
+            ContentView(
+                transitionID: Texts.NamespaceID.selectedImage,
+                animation: animation) {
+                    isShowingCamera.toggle()
+                }
         }
     }
     
@@ -32,6 +38,9 @@ struct OnboardingScreenView: View {
                 .resizable()
                 .scaledToFit()
                 .clipShape(.rect(cornerRadius: 16))
+                .navigationTransitionSource(
+                    id: Texts.NamespaceID.selectedImage,
+                    namespace: animation)
                 .frame(maxWidth: .infinity)
             
             Text(Texts.Onboarding.title)
@@ -44,6 +53,7 @@ struct OnboardingScreenView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .padding(.top)
+        
     }
     
     // MARK: - Action Button
@@ -57,9 +67,7 @@ struct OnboardingScreenView: View {
             foregroundColor: .white)
         
         return SlideToConfirmView(config: config) {
-            // Confirm action
-            let impactMed = UIImpactFeedbackGenerator(style: .medium)
-            impactMed.impactOccurred()
+            isShowingCamera.toggle()
         }
         
         .frame(height: 50)

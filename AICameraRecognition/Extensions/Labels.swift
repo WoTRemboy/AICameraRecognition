@@ -22,4 +22,8 @@ final class Texts {
             static let confirmationText = "Launching..."
         }
     }
+    
+    enum NamespaceID {
+        static let selectedImage = "SelectedImage"
+    }
 }

@@ -11,6 +11,7 @@
 		636F3CBB2DA01C9E00D775E5 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBA2DA01C9D00D775E5 /* Labels.swift */; };
 		636F3CBD2DA01CD100D775E5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBC2DA01CCF00D775E5 /* ColorExtension.swift */; };
 		636F3CBF2DA01D4500D775E5 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBE2DA01D4200D775E5 /* ImageExtension.swift */; };
+		63AC12902DA7DD5F000C7B89 /* ZoomTransitionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC128F2DA7DD56000C7B89 /* ZoomTransitionModifier.swift */; };
 		63B33CE02DA6A2F7006564B6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B33CDF2DA6A2F3006564B6 /* OnboardingView.swift */; };
 		63B33CE22DA6A449006564B6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B33CE12DA6A446006564B6 /* ViewExtension.swift */; };
 		63B33CE42DA6A633006564B6 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B33CE32DA6A630006564B6 /* FontExtension.swift */; };
@@ -30,6 +31,7 @@
 		636F3CBA2DA01C9D00D775E5 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		636F3CBC2DA01CCF00D775E5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		636F3CBE2DA01D4200D775E5 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		63AC128F2DA7DD56000C7B89 /* ZoomTransitionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitionModifier.swift; sourceTree = "<group>"; };
 		63B33CDF2DA6A2F3006564B6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		63B33CE12DA6A446006564B6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		63B33CE32DA6A630006564B6 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
@@ -122,6 +124,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		63AC12912DA7DD65000C7B89 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63B33CE82DA6AF1E006564B6 /* SlideToConfirmView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		63AC12922DA7DD69000C7B89 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				63AC128F2DA7DD56000C7B89 /* ZoomTransitionModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		63B33CDD2DA6A2DE006564B6 /* OnboardingModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +159,8 @@
 		63B33CE52DA6AECB006564B6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				63B33CE82DA6AF1E006564B6 /* SlideToConfirmView.swift */,
+				63AC12912DA7DD65000C7B89 /* Views */,
+				63AC12922DA7DD69000C7B89 /* Modifiers */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -287,6 +306,7 @@
 				63D723BA2DA40E1E008FF419 /* DetectionResultModel.swift in Sources */,
 				636F3CBF2DA01D4500D775E5 /* ImageExtension.swift in Sources */,
 				636F3CBD2DA01CD100D775E5 /* ColorExtension.swift in Sources */,
+				63AC12902DA7DD5F000C7B89 /* ZoomTransitionModifier.swift in Sources */,
 				63B33CE92DA6AF1E006564B6 /* SlideToConfirmView.swift in Sources */,
 				63D723C62DA40F63008FF419 /* YOLOv3.mlmodel in Sources */,
 				63E566B32DA014230049951D /* ContentView.swift in Sources */,

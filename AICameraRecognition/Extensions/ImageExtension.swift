@@ -17,4 +17,8 @@ extension Image {
             static let checkmark = Image(systemName: "checkmark")
         }
     }
+    
+    enum CameraView {
+        static let dismissButton = Image("DismissButton")
+    }
 }

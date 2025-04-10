@@ -76,7 +76,7 @@ final class CameraViewController: UIViewController {
         previewLayer.frame = view.bounds
         view.layer.addSublayer(previewLayer)
         
-        DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.3) {
             self.captureSession.startRunning()
         }
     }
