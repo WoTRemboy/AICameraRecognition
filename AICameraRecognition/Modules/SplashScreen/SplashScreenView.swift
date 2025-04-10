@@ -22,7 +22,7 @@ struct SplashScreenView: View {
     internal var body: some View {
         if isActive {
             // Step to the main view
-            ContentView()
+            OnboardingScreenView()
         } else {
             // Shows splash screen
             content
@@ -42,7 +42,7 @@ struct SplashScreenView: View {
     private var content: some View {
         ZStack {
             // Background color
-            Color.BackColors.backDefault
+            Color.BackColors.backSplash
                 .ignoresSafeArea()
             
             VStack(spacing: 30) {
@@ -50,11 +50,10 @@ struct SplashScreenView: View {
                 Image.Onboarding.splashScreenLogo
                     .resizable()
                     .scaledToFit()
-                    .clipShape(.buttonBorder)
                     .frame(height: 300)
                 
                 Text(texts[id])
-                    .foregroundStyle(Color.LabelColors.labelPrimary)
+                    .foregroundStyle(Color.LabelColors.labelWhite)
                     .font(.system(size: 55, weight: .medium))
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
