@@ -39,6 +39,16 @@ final class CameraViewController: UIViewController {
         previewLayer.frame = view.bounds
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            if let self, self.captureSession.isRunning {
+                self.captureSession.stopRunning()
+                print("Capture session stopped")
+            }
+        }
+    }
+    
     private func setupCamera() {
         captureSession.beginConfiguration()
         captureSession.sessionPreset = .high
@@ -76,8 +86,8 @@ final class CameraViewController: UIViewController {
         previewLayer.frame = view.bounds
         view.layer.addSublayer(previewLayer)
         
-        DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.3) {
-            self.captureSession.startRunning()
+        DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.3) { [weak self] in
+            self?.captureSession.startRunning()
         }
     }
     

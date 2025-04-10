@@ -95,6 +95,10 @@ struct SlideToConfirmView: View {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 onSwiped()
                             }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                isCompleted = false
+                                offsetX = 0
+                            }
                             let impactMed = UIImpactFeedbackGenerator(style: .medium)
                             impactMed.impactOccurred()
                         } else {

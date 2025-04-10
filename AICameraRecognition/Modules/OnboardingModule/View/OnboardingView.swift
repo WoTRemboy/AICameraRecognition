@@ -34,6 +34,9 @@ struct OnboardingScreenView: View {
     
     private var content: some View {
         VStack(spacing: 16) {
+            Text(Texts.Onboarding.title)
+                .font(.largeTitle())
+            
             Image.Onboarding.onboardingImage
                 .resizable()
                 .scaledToFit()
@@ -42,10 +45,6 @@ struct OnboardingScreenView: View {
                     id: Texts.NamespaceID.selectedImage,
                     namespace: animation)
                 .frame(maxWidth: .infinity)
-            
-            Text(Texts.Onboarding.title)
-                .font(.largeTitle())
-                .padding(.top)
             
             Text(Texts.Onboarding.description)
                 .multilineTextAlignment(.center)
