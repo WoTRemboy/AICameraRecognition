@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct OnboardingScreenView: View {
     
@@ -13,6 +14,7 @@ struct OnboardingScreenView: View {
     
     @State private var isActive = false
     @State private var isShowingCamera = false
+    @State private var isShowingCameraAccessAlert = false
     
     // MARK: - Body
     
@@ -27,6 +29,20 @@ struct OnboardingScreenView: View {
                 animation: animation) {
                     isShowingCamera.toggle()
                 }
+        }
+        .alert(Texts.Onboarding.Alert.title,
+               isPresented: $isShowingCameraAccessAlert) {
+            Button(Texts.Onboarding.Alert.settings) {
+                if let url = URL(string: UIApplication.openSettingsURLString),
+                   UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url)
+                }
+            }
+            Button(Texts.Onboarding.Alert.cancel, role: .cancel) {
+                NotificationCenter.default.post(name: .cameraDidStop, object: nil)
+            }
+        } message: {
+            Text(Texts.Onboarding.Alert.content)
         }
     }
     
@@ -66,7 +82,25 @@ struct OnboardingScreenView: View {
             foregroundColor: .white)
         
         return SlideToConfirmView(config: config) {
-            isShowingCamera.toggle()
+            let status = AVCaptureDevice.authorizationStatus(for: .video)
+            switch status {
+            case .authorized:
+                isShowingCamera.toggle()
+            case .notDetermined:
+                AVCaptureDevice.requestAccess(for: .video) { granted in
+                    DispatchQueue.main.async {
+                        if granted {
+                            isShowingCamera.toggle()
+                        } else {
+                            isShowingCameraAccessAlert.toggle()
+                        }
+                    }
+                }
+            case .restricted, .denied:
+                isShowingCameraAccessAlert.toggle()
+            @unknown default:
+                isShowingCameraAccessAlert.toggle()
+            }
         }
         
         .frame(height: 50)

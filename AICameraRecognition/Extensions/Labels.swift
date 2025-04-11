@@ -21,6 +21,13 @@ final class Texts {
             static let onSwipeText = "Confirms Launch"
             static let confirmationText = "Launching..."
         }
+        
+        enum Alert {
+            static let title = "Camera is not allowed"
+            static let content = "Please allow the app to access your camera."
+            static let settings = "Settings"
+            static let cancel = "Cancel"
+        }
     }
     
     enum NamespaceID {
