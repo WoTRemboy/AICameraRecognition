@@ -52,6 +52,12 @@ struct SlideToConfirmView: View {
                 }
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: .cameraDidStop)) { _ in
+            withAnimation(.smooth) {
+                isCompleted = false
+                offsetX = 0
+            }
+        }
         .frame(height: isCompleted ? 50 : config.height)
         .containerRelativeFrame(.horizontal) { value, _ in
             let ratio: CGFloat = isCompleted ? 0.5 : 0.8
@@ -88,16 +94,11 @@ struct SlideToConfirmView: View {
                         offsetX = min(max(value.translation.width, 0), maxLimit)
                     }).onEnded({ value in
                         if offsetX == maxLimit {
-                            animateText = false
                             withAnimation(.smooth) {
                                 isCompleted = true
                             }
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 onSwiped()
-                            }
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                                isCompleted = false
-                                offsetX = 0
                             }
                             let impactMed = UIImpactFeedbackGenerator(style: .medium)
                             impactMed.impactOccurred()

@@ -27,3 +27,7 @@ final class Texts {
         static let selectedImage = "SelectedImage"
     }
 }
+
+extension Notification.Name {
+    static let cameraDidStop = Notification.Name("cameraDidStop")
+}

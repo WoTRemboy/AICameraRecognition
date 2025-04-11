@@ -45,6 +45,10 @@ final class CameraViewController: UIViewController {
             if let self, self.captureSession.isRunning {
                 self.captureSession.stopRunning()
                 print("Capture session stopped")
+                
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: .cameraDidStop, object: nil)
+                }
             }
         }
     }
