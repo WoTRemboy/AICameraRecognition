@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		636D0DEE2DA95014006F5CC7 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D0DED2DA95009006F5CC7 /* OnboardingViewModel.swift */; };
 		636F3CB82DA01C4600D775E5 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CB72DA01C4100D775E5 /* SplashScreenView.swift */; };
 		636F3CBB2DA01C9E00D775E5 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBA2DA01C9D00D775E5 /* Labels.swift */; };
 		636F3CBD2DA01CD100D775E5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBC2DA01CCF00D775E5 /* ColorExtension.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		636D0DED2DA95009006F5CC7 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		636F3CB72DA01C4100D775E5 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		636F3CBA2DA01C9D00D775E5 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		636F3CBC2DA01CCF00D775E5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		636D0DEC2DA94F4D006F5CC7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				636D0DED2DA95009006F5CC7 /* OnboardingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		636F3CB12DA0155700D775E5 /* CameraModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				63B33CDE2DA6A2EE006564B6 /* View */,
+				636D0DEC2DA94F4D006F5CC7 /* ViewModel */,
 			);
 			path = OnboardingModule;
 			sourceTree = "<group>";
@@ -309,6 +320,7 @@
 				63AC12902DA7DD5F000C7B89 /* ZoomTransitionModifier.swift in Sources */,
 				63B33CE92DA6AF1E006564B6 /* SlideToConfirmView.swift in Sources */,
 				63D723C62DA40F63008FF419 /* YOLOv3.mlmodel in Sources */,
+				636D0DEE2DA95014006F5CC7 /* OnboardingViewModel.swift in Sources */,
 				63E566B32DA014230049951D /* ContentView.swift in Sources */,
 				636F3CBB2DA01C9E00D775E5 /* Labels.swift in Sources */,
 				636F3CB82DA01C4600D775E5 /* SplashScreenView.swift in Sources */,

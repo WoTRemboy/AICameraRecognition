@@ -10,11 +10,8 @@ import AVFoundation
 
 struct OnboardingScreenView: View {
     
+    @StateObject private var viewModel = OnboardingViewModel()
     @Namespace private var animation
-    
-    @State private var isActive = false
-    @State private var isShowingCamera = false
-    @State private var isShowingCameraAccessAlert = false
     
     // MARK: - Body
     
@@ -23,15 +20,15 @@ struct OnboardingScreenView: View {
             content
             actionButton
         }
-        .fullScreenCover(isPresented: $isShowingCamera) {
+        .fullScreenCover(isPresented: $viewModel.isShowingCamera) {
             ContentView(
                 transitionID: Texts.NamespaceID.selectedImage,
                 animation: animation) {
-                    isShowingCamera.toggle()
+                    viewModel.isShowingCameraToggle()
                 }
         }
         .alert(Texts.Onboarding.Alert.title,
-               isPresented: $isShowingCameraAccessAlert) {
+               isPresented: $viewModel.isShowingCameraAccessAlert) {
             Button(Texts.Onboarding.Alert.settings) {
                 if let url = URL(string: UIApplication.openSettingsURLString),
                    UIApplication.shared.canOpenURL(url) {
@@ -39,7 +36,7 @@ struct OnboardingScreenView: View {
                 }
             }
             Button(Texts.Onboarding.Alert.cancel, role: .cancel) {
-                NotificationCenter.default.post(name: .cameraDidStop, object: nil)
+                viewModel.cameraDidStopNotify()
             }
         } message: {
             Text(Texts.Onboarding.Alert.content)
@@ -82,25 +79,7 @@ struct OnboardingScreenView: View {
             foregroundColor: .white)
         
         return SlideToConfirmView(config: config) {
-            let status = AVCaptureDevice.authorizationStatus(for: .video)
-            switch status {
-            case .authorized:
-                isShowingCamera.toggle()
-            case .notDetermined:
-                AVCaptureDevice.requestAccess(for: .video) { granted in
-                    DispatchQueue.main.async {
-                        if granted {
-                            isShowingCamera.toggle()
-                        } else {
-                            isShowingCameraAccessAlert.toggle()
-                        }
-                    }
-                }
-            case .restricted, .denied:
-                isShowingCameraAccessAlert.toggle()
-            @unknown default:
-                isShowingCameraAccessAlert.toggle()
-            }
+            viewModel.cameraAccessCheck()
         }
         
         .frame(height: 50)
