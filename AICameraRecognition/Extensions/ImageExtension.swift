@@ -20,5 +20,6 @@ extension Image {
     
     enum CameraView {
         static let dismissButton = Image("DismissButton")
+        static let photoButton = Image("PhotoButton")
     }
 }
