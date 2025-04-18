@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		633FC0D32DB2B40400B0EADF /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633FC0D22DB2B40100B0EADF /* PreviewData.swift */; };
 		636D0DEE2DA95014006F5CC7 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D0DED2DA95009006F5CC7 /* OnboardingViewModel.swift */; };
 		636F3CB82DA01C4600D775E5 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CB72DA01C4100D775E5 /* SplashScreenView.swift */; };
 		636F3CBB2DA01C9E00D775E5 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBA2DA01C9D00D775E5 /* Labels.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		633FC0D22DB2B40100B0EADF /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		636D0DED2DA95009006F5CC7 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		636F3CB72DA01C4100D775E5 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		636F3CBA2DA01C9D00D775E5 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		633FC0D12DB2B3FA00B0EADF /* PreviewData */ = {
+			isa = PBXGroup;
+			children = (
+				633FC0D22DB2B40100B0EADF /* PreviewData.swift */,
+			);
+			path = PreviewData;
+			sourceTree = "<group>";
+		};
 		636D0DEC2DA94F4D006F5CC7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +182,7 @@
 			children = (
 				63AC12912DA7DD65000C7B89 /* Views */,
 				63AC12922DA7DD69000C7B89 /* Modifiers */,
+				633FC0D12DB2B3FA00B0EADF /* PreviewData */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -313,6 +324,7 @@
 			files = (
 				63E566B22DA014230049951D /* AICameraRecognitionApp.swift in Sources */,
 				63D723C22DA40E7D008FF419 /* CameraViewController.swift in Sources */,
+				633FC0D32DB2B40400B0EADF /* PreviewData.swift in Sources */,
 				63B33CE42DA6A633006564B6 /* FontExtension.swift in Sources */,
 				63D723BA2DA40E1E008FF419 /* DetectionResultModel.swift in Sources */,
 				636F3CBF2DA01D4500D775E5 /* ImageExtension.swift in Sources */,
