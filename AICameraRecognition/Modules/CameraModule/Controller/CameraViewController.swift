@@ -39,8 +39,19 @@ final class CameraViewController: UIViewController {
         previewLayer.frame = view.bounds
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            UIApplication.shared.isIdleTimerDisabled = true
+        }
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        DispatchQueue.main.async {
+            UIApplication.shared.isIdleTimerDisabled = false
+        }
+        
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             if let self, self.captureSession.isRunning {
                 self.captureSession.stopRunning()
