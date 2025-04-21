@@ -21,17 +21,37 @@ struct ContentView: View {
     }
     
     internal var body: some View {
-        ZStack(alignment: .bottomTrailing) {
+        ZStack {
             CameraView(detectionResults: detectionResults)
                 .ignoresSafeArea()
             
             DetectionOverlayView(detectionResults: detectionResults)
             
+            detectedTitlesScrollView
             dismissButton
         }
         .navigationTransition(
             id: transitionID,
             namespace: animation)
+    }
+    
+    private var detectedTitlesScrollView: some View {
+        ScrollView(.horizontal) {
+            HStack {
+                ForEach(detectionResults.detections) { detection in
+                    let title = String(detection.label).capitalized
+                    Text(title)
+                        .padding(.vertical, 2)
+                        .padding(.horizontal, 8)
+                        .background(Color.BackColors.backDefault)
+                        .clipShape(.buttonBorder)
+                }
+            }
+            .padding(.horizontal)
+        }
+        .scrollIndicators(.hidden)
+        .padding(.top)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
     
     private var dismissButton: some View {
@@ -45,6 +65,7 @@ struct ContentView: View {
                 .shadow(color: Color.black.opacity(0.25), radius: 4, x: 2, y: 2)
                 .padding(20)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
     }
 }
 
