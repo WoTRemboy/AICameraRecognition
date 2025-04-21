@@ -9,6 +9,9 @@ import UIKit
 import AVFoundation
 import Vision
 import CoreML
+import OSLog
+
+private let logger = Logger(subsystem: "CameraModule", category: "CameraViewController")
 
 final class CameraViewController: UIViewController {
     var detectionResults: DetectionResults?
@@ -23,6 +26,7 @@ final class CameraViewController: UIViewController {
             let vnModel = try VNCoreMLModel(for: yoloModel.model)
             let request = VNCoreMLRequest(model: vnModel, completionHandler: visionRequestDidComplete)
             request.imageCropAndScaleOption = .scaleFill
+            logger.info("YOLOv3 model setup success")
             return request
         } catch {
             fatalError("YOLOv3 model setup error: \(error)")
@@ -55,7 +59,7 @@ final class CameraViewController: UIViewController {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             if let self, self.captureSession.isRunning {
                 self.captureSession.stopRunning()
-                print("Capture session stopped")
+                logger.info("Capture session stopped")
                 
                 DispatchQueue.main.async {
                     NotificationCenter.default.post(name: .cameraDidStop, object: nil)
@@ -72,14 +76,15 @@ final class CameraViewController: UIViewController {
                                                         for: .video,
                                                         position: .back),
               let videoInput = try? AVCaptureDeviceInput(device: videoDevice) else {
-            print("Camera is not allowed")
+            logger.warning("Camera is not allowed")
             return
         }
         
         if captureSession.canAddInput(videoInput) {
             captureSession.addInput(videoInput)
+            logger.info("Added video input")
         } else {
-            print("Can't add video input")
+            logger.error("Can't add video input")
             captureSession.commitConfiguration()
             return
         }
@@ -88,8 +93,9 @@ final class CameraViewController: UIViewController {
         videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         if captureSession.canAddOutput(videoOutput) {
             captureSession.addOutput(videoOutput)
+            logger.info("Added video output")
         } else {
-            print("Can't add video output")
+            logger.error("Can't add video output")
             captureSession.commitConfiguration()
             return
         }
@@ -103,12 +109,13 @@ final class CameraViewController: UIViewController {
         
         DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.3) { [weak self] in
             self?.captureSession.startRunning()
+            logger.info("Camera started running")
         }
     }
     
     private func visionRequestDidComplete(request: VNRequest, error: Error?) {
         if let error = error {
-            print("Request completion failed: \(error)")
+            logger.error("Request completion failed: \(error)")
             return
         }
         
@@ -141,7 +148,7 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         do {
             try handler.perform([detectionRequest])
         } catch {
-            print("Vision request competion failed: \(error)")
+            logger.error("Vision request competion failed: \(error)")
         }
     }
 }

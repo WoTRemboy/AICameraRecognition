@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import OSLog
+
+private let logger = Logger(subsystem: "Extensions", category: "ViewExtension")
 
 extension View {
     /// Checks if the device has a notch by evaluating the top safe area inset.
@@ -13,6 +16,7 @@ extension View {
     internal func hasNotch() -> Bool {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let keyWindow = windowScene.windows.first(where: \.isKeyWindow) else {
+            logger.error("Key window not found")
             return false
         }
         return keyWindow.safeAreaInsets.top > 20
