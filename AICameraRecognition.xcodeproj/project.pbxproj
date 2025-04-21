@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		633FC0D32DB2B40400B0EADF /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633FC0D22DB2B40100B0EADF /* PreviewData.swift */; };
+		633FC1282DB683AA00B0EADF /* DetectionResultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633FC1252DB683AA00B0EADF /* DetectionResultsTests.swift */; };
+		633FC1292DB683AA00B0EADF /* DetectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633FC1262DB683AA00B0EADF /* DetectionTests.swift */; };
+		633FC12B2DB684B900B0EADF /* CameraViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633FC12A2DB684B800B0EADF /* CameraViewControllerTests.swift */; };
 		636D0DEE2DA95014006F5CC7 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D0DED2DA95009006F5CC7 /* OnboardingViewModel.swift */; };
 		636F3CB82DA01C4600D775E5 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CB72DA01C4100D775E5 /* SplashScreenView.swift */; };
 		636F3CBB2DA01C9E00D775E5 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F3CBA2DA01C9D00D775E5 /* Labels.swift */; };
@@ -28,8 +31,22 @@
 		63E566B32DA014230049951D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E566AF2DA014230049951D /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		633FC11C2DB6831600B0EADF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63E566972DA012E50049951D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63E5669E2DA012E50049951D;
+			remoteInfo = AICameraRecognition;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		633FC0D22DB2B40100B0EADF /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		633FC1182DB6831600B0EADF /* AICameraRecognitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AICameraRecognitionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		633FC1252DB683AA00B0EADF /* DetectionResultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionResultsTests.swift; sourceTree = "<group>"; };
+		633FC1262DB683AA00B0EADF /* DetectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionTests.swift; sourceTree = "<group>"; };
+		633FC12A2DB684B800B0EADF /* CameraViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewControllerTests.swift; sourceTree = "<group>"; };
 		636D0DED2DA95009006F5CC7 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		636F3CB72DA01C4100D775E5 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		636F3CBA2DA01C9D00D775E5 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
@@ -53,6 +70,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		633FC1152DB6831600B0EADF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63E5669C2DA012E50049951D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,6 +93,16 @@
 				633FC0D22DB2B40100B0EADF /* PreviewData.swift */,
 			);
 			path = PreviewData;
+			sourceTree = "<group>";
+		};
+		633FC1272DB683AA00B0EADF /* AICameraRecognitionTests */ = {
+			isa = PBXGroup;
+			children = (
+				633FC1262DB683AA00B0EADF /* DetectionTests.swift */,
+				633FC1252DB683AA00B0EADF /* DetectionResultsTests.swift */,
+				633FC12A2DB684B800B0EADF /* CameraViewControllerTests.swift */,
+			);
+			path = AICameraRecognitionTests;
 			sourceTree = "<group>";
 		};
 		636D0DEC2DA94F4D006F5CC7 /* ViewModel */ = {
@@ -224,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				63E566B02DA014230049951D /* AICameraRecognition */,
+				633FC1272DB683AA00B0EADF /* AICameraRecognitionTests */,
 				63E566A02DA012E50049951D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -232,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				63E5669F2DA012E50049951D /* AICameraRecognition.app */,
+				633FC1182DB6831600B0EADF /* AICameraRecognitionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,6 +289,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		633FC1172DB6831600B0EADF /* AICameraRecognitionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 633FC1202DB6831600B0EADF /* Build configuration list for PBXNativeTarget "AICameraRecognitionTests" */;
+			buildPhases = (
+				633FC1142DB6831600B0EADF /* Sources */,
+				633FC1152DB6831600B0EADF /* Frameworks */,
+				633FC1162DB6831600B0EADF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				633FC11D2DB6831600B0EADF /* PBXTargetDependency */,
+			);
+			name = AICameraRecognitionTests;
+			packageProductDependencies = (
+			);
+			productName = AICameraRecognitionTests;
+			productReference = 633FC1182DB6831600B0EADF /* AICameraRecognitionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		63E5669E2DA012E50049951D /* AICameraRecognition */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63E566AA2DA012E60049951D /* Build configuration list for PBXNativeTarget "AICameraRecognition" */;
@@ -282,6 +338,10 @@
 				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
+					633FC1172DB6831600B0EADF = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 63E5669E2DA012E50049951D;
+					};
 					63E5669E2DA012E50049951D = {
 						CreatedOnToolsVersion = 16.3;
 					};
@@ -302,11 +362,19 @@
 			projectRoot = "";
 			targets = (
 				63E5669E2DA012E50049951D /* AICameraRecognition */,
+				633FC1172DB6831600B0EADF /* AICameraRecognitionTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		633FC1162DB6831600B0EADF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63E5669D2DA012E50049951D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +386,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		633FC1142DB6831600B0EADF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				633FC1282DB683AA00B0EADF /* DetectionResultsTests.swift in Sources */,
+				633FC12B2DB684B900B0EADF /* CameraViewControllerTests.swift in Sources */,
+				633FC1292DB683AA00B0EADF /* DetectionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63E5669B2DA012E50049951D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,7 +423,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		633FC11D2DB6831600B0EADF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63E5669E2DA012E50049951D /* AICameraRecognition */;
+			targetProxy = 633FC11C2DB6831600B0EADF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		633FC11E2DB6831600B0EADF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NAJAJ652LV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avoqode.AICameraRecognitionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AICameraRecognition.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AICameraRecognition";
+			};
+			name = Debug;
+		};
+		633FC11F2DB6831600B0EADF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NAJAJ652LV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avoqode.AICameraRecognitionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AICameraRecognition.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AICameraRecognition";
+			};
+			name = Release;
+		};
 		63E566A82DA012E60049951D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -542,6 +664,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		633FC1202DB6831600B0EADF /* Build configuration list for PBXNativeTarget "AICameraRecognitionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				633FC11E2DB6831600B0EADF /* Debug */,
+				633FC11F2DB6831600B0EADF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		63E5669A2DA012E50049951D /* Build configuration list for PBXProject "AICameraRecognition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

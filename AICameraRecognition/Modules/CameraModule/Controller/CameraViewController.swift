@@ -113,7 +113,7 @@ final class CameraViewController: UIViewController {
         }
     }
     
-    private func visionRequestDidComplete(request: VNRequest, error: Error?) {
+    internal func visionRequestDidComplete(request: VNRequest, error: Error?) {
         if let error = error {
             logger.error("Request completion failed: \(error)")
             return
