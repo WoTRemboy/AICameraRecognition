@@ -15,7 +15,7 @@ It displays bounding boxes and confidence labels over the live feed, shows detec
 - [Documentation](#documentation)
 - [Requirements](#requirements)
 
-## Features 📸
+<h2 id="features">Features 📸</h2>
 
 ### Real‑Time Object Detection
 - **Vision/CoreML**: Runs a CoreML model on each frame to detect objects.  
@@ -34,14 +34,16 @@ It displays bounding boxes and confidence labels over the live feed, shows detec
 <img src="https://github.com/user-attachments/assets/f97da892-d457-4cce-8b0a-1419f22a9413" alt="Splash Screen" width="200" height="435">
 <img src="https://github.com/user-attachments/assets/738febeb-49ee-42ff-a9e0-f5300437109d" alt="Onboarding Page" width="200" height="435">
 
-## Technologies 💻
+<h2 id="technologies">Technologies 💻</h2>
+
 - **Swift & SwiftUI** for declarative UI and animations  
 - **AVFoundation** for camera capture  
 - **Vision & CoreML** for object detection  
 - **Combine** for reactive state updates (`@Published`, `@StateObject`)  
 - **OSLog** for structured logging
 
-## Architecture 🏗️
+<h2 id="architecture">Architecture 🏗️</h2>
+
 Follows an **MVVM** pattern:
 
 **Model**  
@@ -55,13 +57,15 @@ Follows an **MVVM** pattern:
 - SwiftUI views: `SplashScreenView`, `OnboardingScreenView`, `SlideToConfirmView`, `DetectionOverlayView`, `ContentView`  
 - `CameraViewController` wrapped by `CameraView` for AVCapture + Vision integration
 
-## Testing 🧪
+<h2 id="testing">Testing 🧪</h2>
+
 **Unit Tests** (XCTest) in `AICameraRecognitionTests` target:  
 - `DetectionTests` — uniqueness and property correctness  
 - `DetectionResultsTests` — verifies `@Published` updates  
 - `CameraViewControllerTests` — simulates `VNRequest` responses to test `visionRequestDidComplete`
 
-## Documentation 📚
+<h2 id="documentation">Documentation 📚</h2>
+
 Reconix’s code is documented following Apple’s DocC format. This documentation covers:
 
 - **Classes and Methods**: Detailed explanations of each class, method, and property.
@@ -77,8 +81,8 @@ internal func visionRequestDidComplete(request: VNRequest, error: Error?) {
     // Code implementation
 }
 ```
+<h2 id="requirements">Requirements ✅</h2>
 
-## Requirements ✅
 - Xcode 15.0+  
 - Swift 5.8+  
 - iOS 17.0+  
