@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+/// A namespace for application color assets, organized by usage context.
 extension Color {
+    
+    /// Background colors used throughout the app.
     enum BackColors {
         static let backElevated = Color("BackElevated")
         static let backiOSPrimary = Color("BackiOSPrimary")
@@ -17,6 +20,7 @@ extension Color {
         static let backSplash = Color("BackSplash")
     }
     
+    /// Text label colors used for different semantic purposes.
     enum LabelColors {
         static let labelDisable = Color("LabelDisable")
         static let labelDetails = Color("LabelDetails")
@@ -28,6 +32,7 @@ extension Color {
         static let labelWhite = Color("LabelWhite")
     }
     
+    /// Tint colors used for interactive elements and highlights.
     enum TintColors {
         static let tintBlue = Color("TintBlue")
         static let tintGreen = Color("TintGreen")
