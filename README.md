@@ -4,7 +4,7 @@
 </div>
 
 **AI Camera Recognition** is a real‑time object detection iOS app that leverages a device camera, Vision, and CoreML to identify objects in the scene.
-It displays bounding boxes and confidence labels over the live feed, shows detected object names in a scrollable header. Find it in [TestFlight](https://testflight.apple.com/join/4xadjzG9).
+It displays bounding boxes and confidence labels over the live feed, shows detected object names in a scrollable header. Watch a [Demo](https://drive.google.com/file/d/1Sitn5bz5-8e9yrB8neskC_jzpZ5LN489/view?usp=sharing). Find it in [TestFlight](https://testflight.apple.com/join/4xadjzG9).
 
 ## Table of Contents 📋  
 
